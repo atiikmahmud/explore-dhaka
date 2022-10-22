@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>Explore Dhaka</title>
+    <link rel = "icon" type = "image/png" href = "{{url('images/fevicon.png')}}">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -54,6 +57,12 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Hospital</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -207,17 +216,115 @@
                   </div>
                 </div>
               </div>
-              
+
+              <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="post-image">
+                      <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
+                    </div>
+                  </div>
+                  <div class="col-md-8" style="padding-right: 30px">
+                    <div class="post-details pt-4">
+                      <div class="post-title h4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
+                      </div>
+                      <div class="post-body pt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
+                      </div>
+                      <div class="post-author pt-4">
+                        Post by: <strong>Angel Monalisa</strong> <br>
+                        Post Date: 10 Oct 2022
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
           <div class="col-md-3">
-            <div class="sidebar-section bg-light shadow" style="min-height: 500px;">
+            <div class="sidebar-section">
+              
+              <div class="popular-place bg-light shadow mb-4" style="min-height: 360px;">
+                <div class="title h5 text-center pt-3 pb-1">
+                  Popular Place
+                </div>
+                <div class="list px-3">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="popular-restaurent bg-light shadow mb-4" style="min-height: 360px;">
+                <div class="title h5 text-center pt-3 pb-1">
+                  Popular Restaurent
+                </div>
+                <div class="list px-3">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="popular-restaurent bg-light shadow mb-4" style="min-height: 360px;">
+                <div class="title h5 text-center pt-3 pb-1">
+                  Hospital
+                </div>
+                <div class="list px-3">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="popular-restaurent bg-light shadow mb-4" style="min-height: 193px;">
+                <div class="title h5 text-center pt-3 pb-1">
+                  Emergency
+                </div>
+                <div class="list px-3">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                    <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                  </ul>
+                </div>
+              </div>
 
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <footer class="bg-dark mt-4" style="min-height: 50px">
+      <div class="container">
+        <div class="footer-section text-light px-5">
+          <div class="copy-right-section text-center py-3">
+            Copyright &copy; 2022 <a href="{{ route('home') }}" class="text-decoration-none text-light">Explore Dhaka</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script>
       window.onscroll = function() {myFunction()};
