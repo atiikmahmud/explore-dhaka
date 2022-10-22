@@ -33,7 +33,7 @@
 
     <!-- Navbar Section Start -->
     <div class="navbar-section">
-      <nav class="navbar sticky-top navbar-expand-lg bg-light" id="navbar">
+      <nav class="navbar sticky-top navbar-expand-lg bg-light shadow" id="navbar">
         <div class="container">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -106,8 +106,118 @@
     </div>
     <!-- Slider Section End -->
 
-    
+    <div class="container">
+      <div class="main-body-section px-5">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="post-section">
+              
+              <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="post-image">
+                      <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
+                    </div>
+                  </div>
+                  <div class="col-md-8" style="padding-right: 30px">
+                    <div class="post-details pt-4">
+                      <div class="post-title h4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
+                      </div>
+                      <div class="post-body pt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
+                      </div>
+                      <div class="post-author pt-4">
+                        Post by: <strong>Angel Monalisa</strong> <br>
+                        Post Date: 10 Oct 2022
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="post-image">
+                      <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
+                    </div>
+                  </div>
+                  <div class="col-md-8" style="padding-right: 30px">
+                    <div class="post-details pt-4">
+                      <div class="post-title h4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
+                      </div>
+                      <div class="post-body pt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
+                      </div>
+                      <div class="post-author pt-4">
+                        Post by: <strong>Angel Monalisa</strong> <br>
+                        Post Date: 10 Oct 2022
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="post-image">
+                      <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
+                    </div>
+                  </div>
+                  <div class="col-md-8" style="padding-right: 30px">
+                    <div class="post-details pt-4">
+                      <div class="post-title h4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
+                      </div>
+                      <div class="post-body pt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
+                      </div>
+                      <div class="post-author pt-4">
+                        Post by: <strong>Angel Monalisa</strong> <br>
+                        Post Date: 10 Oct 2022
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="post-image">
+                      <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
+                    </div>
+                  </div>
+                  <div class="col-md-8" style="padding-right: 30px">
+                    <div class="post-details pt-4">
+                      <div class="post-title h4">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
+                      </div>
+                      <div class="post-body pt-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
+                      </div>
+                      <div class="post-author pt-4">
+                        Post by: <strong>Angel Monalisa</strong> <br>
+                        Post Date: 10 Oct 2022
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="sidebar-section bg-light shadow" style="min-height: 500px;">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
       window.onscroll = function() {myFunction()};
