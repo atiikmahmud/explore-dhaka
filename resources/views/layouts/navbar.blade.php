@@ -20,25 +20,25 @@
         <div class="collapse navbar-collapse px-5" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+              <a class="nav-link @if($title == 'Home') active @endif" aria-current="page" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Historical Place</a>
+              <a class="nav-link @if($title == 'Historical Place') active @endif" href="{{ route('his.place') }}">Historical Place</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Hotel</a>
+              <a class="nav-link @if($title == 'Hotel') active @endif" href="{{ route('hotel') }}">Hotel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Restaurent</a>
+              <a class="nav-link @if($title == 'Restaurent') active @endif" href="{{ route('restaurent') }}">Restaurent</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Hospital</a>
+              <a class="nav-link @if($title == 'Hospital') active @endif" href="{{ route('hospital') }}">Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('about') }}">About Us</a>
+              <a class="nav-link @if($title == 'About Us') active @endif" href="{{ route('about') }}">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('contacts') }}">Contacts</a>
+              <a class="nav-link @if($title == 'Contacts') active @endif" href="{{ route('contacts') }}">Contacts</a>
             </li>
           </ul>
           <form class="d-flex" role="search">

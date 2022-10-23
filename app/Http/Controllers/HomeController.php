@@ -18,6 +18,30 @@ class HomeController extends Controller
         return view('single-post', compact('title'));
     }
 
+    public function hisPlace()
+    {
+        $title = 'Historical Place';
+        return view('historical-place', compact('title'));
+    }
+
+    public function hotel()
+    {
+        $title = 'Hotel';
+        return view('hotel', compact('title'));
+    }
+
+    public function restaurent()
+    {
+        $title = 'Restaurent';
+        return view('restaurent', compact('title'));
+    }
+
+    public function hospital()
+    {
+        $title = 'Hospital';
+        return view('hospital', compact('title'));
+    }
+
     public function aboutUs()
     {
         $title = 'About Us';
