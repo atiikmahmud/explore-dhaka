@@ -4,7 +4,7 @@
 <div class="header-section">
     <div class="container">
       <div class="brand-name h2 text-center my-3">
-        <i class="fas fa-city"></i> Explore Dhaka
+        <a href="{{ route('home') }}" class="text-decoration-none text-dark"><i class="fas fa-city"></i> Explore Dhaka</a>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse px-5" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Historical Place</a>

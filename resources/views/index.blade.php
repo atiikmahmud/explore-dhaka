@@ -22,7 +22,7 @@
               <div class="col-md-8" style="padding-right: 30px">
                 <div class="post-details pt-4">
                   <div class="post-title h4">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
+                    <a href="{{ route('post') }}" class="text-decoration-none text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?</a>
                   </div>
                   <div class="post-body pt-3">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
