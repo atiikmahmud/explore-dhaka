@@ -8,6 +8,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $title = 'Home';
+        return view('index', compact('title'));
+    }
+
+    public function singlePost()
+    {
+        $title = 'Post';
+        return view('single-post', compact('title'));
     }
 }
