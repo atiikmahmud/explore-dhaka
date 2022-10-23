@@ -35,10 +35,10 @@
               <a class="nav-link" href="#">Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="{{ route('about') }}">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacts</a>
+              <a class="nav-link" href="{{ route('contacts') }}">Contacts</a>
             </li>
           </ul>
           <form class="d-flex" role="search">

@@ -6,7 +6,7 @@
         </div>
       </div>
     </div>
-  </footer>
+</footer>
 
   <script>
     window.onscroll = function() {myFunction()};
