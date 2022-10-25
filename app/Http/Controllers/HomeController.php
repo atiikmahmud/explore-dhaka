@@ -53,4 +53,9 @@ class HomeController extends Controller
         $title = 'Contacts';
         return view('contacts', compact('title'));  
     }
+
+    public function storeContacts(Request $request)
+    {
+        //
+    }
 }

@@ -12,6 +12,7 @@ Route::get('/restaurent',       [HomeController::class, 'restaurent'])->name('re
 Route::get('/hospital',         [HomeController::class, 'hospital'])->name('hospital');
 Route::get('/about-us',         [HomeController::class, 'aboutUs'])->name('about');
 Route::get('/contacts',         [HomeController::class, 'contacts'])->name('contacts');
+Route::post('/contacts',        [HomeController::class, 'storeContacts'])->name('contact.store');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
     Route::get('/dashboard',    [AdminController::class, 'index'])->name('dashboard');

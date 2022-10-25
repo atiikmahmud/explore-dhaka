@@ -19,7 +19,7 @@
                         </div>
                         <div class="card-body">
                           <div class="form-section">
-                            <form action="" method="POST">   
+                            <form action="{{ route('contact.store') }}" method="POST">   
                                 @csrf                         
                                 <div class="form-group mb-3">
                                     <label htmlFor="">Name</label>
