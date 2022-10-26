@@ -27,6 +27,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint fugiat quaerat a pariatur expedita voluptatem laboriosam dignissimos maxime ea possimus saepe odit et voluptas, iste nesciunt dolorem labore atque, accusantium perferendis soluta optio. Numquam inventore voluptatem ad optio unde, alias repellat temporibus? Voluptas iusto, accusantium quis, sint ipsum, voluptatibus pariatur perspiciatis obcaecati magnam dolor sequi eum quasi. Labore dolore sapiente consequuntur cum officia vel non reiciendis sint eum possimus aspernatur dignissimos nam laboriosam odit numquam officiis deleniti omnis adipisci ea facilis autem neque, ipsa quisquam quos? Eum iste, amet, dolorem quas beatae animi blanditiis distinctio modi quia, quidem delectus quos!
                     </div>
 
+                    <div class="google-map text-center my-3" style="max-height: 600px;">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                Google Map
+                            </div>
+                            <div class="card-body">
+                                <div class="location-map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1825.5566840497231!2d90.3716359!3d23.778976999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1281e23768b%3A0xcce93df35e92760a!2sNational%20Museum%20of%20Science%20and%20Technology!5e0!3m2!1sen!2sbd!4v1666795718844!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="post-author mt-4">
                         <strong>Category: </strong> Historical Place <br>
                         <strong>Post by: </strong> Angel Sadia <br>
