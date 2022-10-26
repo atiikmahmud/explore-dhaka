@@ -50,7 +50,7 @@ class HomeController extends Controller
         return view('about-us', compact('title'));
     }
 
-    // Contact Functions Start
+    /* Contact Functions Start */
     
     public function contacts()
     {
@@ -81,5 +81,5 @@ class HomeController extends Controller
         }
     }
 
-    // Contact Functions End
+    /* Contact Functions End */
 }

@@ -11,6 +11,7 @@ Route::get('/hotel',            [HomeController::class, 'hotel'])->name('hotel')
 Route::get('/restaurent',       [HomeController::class, 'restaurent'])->name('restaurent');
 Route::get('/hospital',         [HomeController::class, 'hospital'])->name('hospital');
 Route::get('/about-us',         [HomeController::class, 'aboutUs'])->name('about');
+
 Route::get('/contacts',         [HomeController::class, 'contacts'])->name('contacts');
 Route::post('/contacts',        [HomeController::class, 'storeContacts'])->name('contact.store');
 
