@@ -6,26 +6,25 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        {{-- <x-jet-application-mark class="block h-9 w-auto" /> --}}
                         <img src="{{url('images/fevicon.png')}}" alt="" height="40px" width="40px">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link class="text-decoration-none" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('posts') }}" :active="request()->routeIs('posts')">
+                    <x-jet-nav-link class="text-decoration-none" href="{{ route('posts') }}" :active="request()->routeIs('posts')">
                         {{ __('Posts') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('add.post') }}" :active="request()->routeIs('add.post')">
+                    <x-jet-nav-link class="text-decoration-none" href="{{ route('add.post') }}" :active="request()->routeIs('add.post')">
                         {{ __('Add Post') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('comments') }}" :active="request()->routeIs('comments')">
+                    <x-jet-nav-link class="text-decoration-none" href="{{ route('comments') }}" :active="request()->routeIs('comments')">
                         {{ __('Comments') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('messages') }}" :active="request()->routeIs('messages')">
+                    <x-jet-nav-link class="text-decoration-none" href="{{ route('messages') }}" :active="request()->routeIs('messages')">
                         {{ __('Messages') }}    
                     </x-jet-nav-link>
                 </div>
@@ -109,7 +108,7 @@
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                            <x-jet-dropdown-link class="text-decoration-none" href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
 
@@ -125,7 +124,7 @@
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
-                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                <x-jet-dropdown-link class="text-decoration-none" href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>

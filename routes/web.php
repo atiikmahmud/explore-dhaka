@@ -21,4 +21,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
     Route::get('/add-post',     [AdminController::class, 'addPost'])->name('add.post');
     Route::get('/comments',     [AdminController::class, 'comments'])->name('comments');
     Route::get('/messages',     [AdminController::class, 'messages'])->name('messages');
+    Route::get('/read-message/{id}',   [AdminController::class, 'readMessage'])->name('read.message');
+    Route::get('/delete-message/{id}', [AdminController::class, 'deleteMessage'])->name('delete.message');
 });

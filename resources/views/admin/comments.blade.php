@@ -1,3 +1,11 @@
 <x-app-layout>
-    <h1 class="text-center pt-5">Comments</h1>
+    <div class="messages-section">
+        <div class="contaner-fluid">
+            <div class="card">
+                <div class="card-header text-center h3">
+                    Comments
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>
