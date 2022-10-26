@@ -27,6 +27,9 @@
                     <x-jet-nav-link class="text-decoration-none" href="{{ route('messages') }}" :active="request()->routeIs('messages')">
                         {{ __('Messages') }}    
                     </x-jet-nav-link>
+                    <x-jet-nav-link class="text-decoration-none" href="{{ route('sliders') }}" :active="request()->routeIs('sliders')">
+                        {{ __('Sliders') }}    
+                    </x-jet-nav-link>
                 </div>
             </div>
 

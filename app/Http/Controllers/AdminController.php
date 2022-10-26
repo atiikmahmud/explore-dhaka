@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
@@ -14,12 +16,52 @@ class AdminController extends Controller
 
     public function posts()
     {
+        $posts = Post::with('user')->get();
+        dd($posts->toArray());
         return view('admin.posts');
     }
 
     public function addPost()
     {
         return view('admin.add-post');
+    }
+
+    public function storePost(Request $request)
+    {
+        $request->validate([
+            'title'         => 'required',
+            'image'         => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'caption'       => 'required',
+            'details'       => 'required',
+            'category'      => 'required',
+            'map'           => 'required',
+        ]);
+
+        try{
+            
+            if ($image = $request->file('image')) {
+                $destinationPath = 'image/';
+                $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $postImage);
+                $input['image'] = "$postImage";
+            }
+            
+            $post = new Post;
+            $post->image   = $postImage;
+            $post->caption = $request->caption;
+            $post->title   = $request->title;
+            $post->details = $request->details;
+            $post->category= $request->category;
+            $post->map     = $request->map;
+            $post->user_id = Auth()->user()->id;
+            $post->save();
+
+            return redirect()->back()->with('success', 'Post created successfully !!');
+        }
+        catch(\Exception $e){
+            Log::error($e->getMessage());
+            return redirect()->back()->with('error', 'Post not created !!');
+        }
     }
 
     public function comments()
@@ -60,4 +102,9 @@ class AdminController extends Controller
     }
 
     /* Contact Messages Function End */
+
+    public function sliders()
+    {
+        return view('admin.sliders');
+    }
 }
