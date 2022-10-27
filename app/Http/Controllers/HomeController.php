@@ -16,10 +16,12 @@ class HomeController extends Controller
         return view('index', compact('title','posts'));
     }
 
-    public function singlePost()
+    public function singlePost($id)
     {
         $title = 'Post';
-        return view('single-post', compact('title'));
+        $post = Post::with('user')->where('id', $id)->first();
+        // dd($post);
+        return view('single-post', compact('title','post'));
     }
 
     public function hisPlace()

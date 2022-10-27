@@ -22,10 +22,10 @@
               <div class="col-md-8" style="padding-right: 30px">
                 <div class="post-details pt-4">
                   <div class="post-title h4">
-                    <a href="{{ route('post') }}" class="text-decoration-none text-dark">{{ Str::limit($post->title, 60) }}</a>
+                    <a href="{{ route('post', $post->id) }}" class="text-decoration-none text-dark">{{ Str::limit($post->title, 60) }}</a>
                   </div>
                   <div class="post-body pt-3">
-                    {!! html_entity_decode(Str::limit($post->details, 230)) !!}
+                    {!! html_entity_decode(Str::limit($post->details, 150)) !!}
                   </div>
                   <div class="post-author pt-4">
                     Post by: <strong>{{ $post->user->name }}</strong> <br>
