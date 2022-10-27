@@ -16,9 +16,9 @@ class AdminController extends Controller
 
     public function posts()
     {
-        $posts = Post::with('user')->get();
-        dd($posts->toArray());
-        return view('admin.posts');
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(10);
+        // dd($posts->toArray());
+        return view('admin.posts', compact('posts'));
     }
 
     public function addPost()

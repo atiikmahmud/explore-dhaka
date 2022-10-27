@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -11,7 +12,8 @@ class HomeController extends Controller
     public function index()
     {
         $title = 'Home';
-        return view('index', compact('title'));
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
+        return view('index', compact('title','posts'));
     }
 
     public function singlePost()

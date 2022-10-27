@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-md-9">
         <div class="post-section">
-          
+          @foreach($posts as $post)
           <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
             <div class="row">
               <div class="col-md-4">
@@ -22,115 +22,21 @@
               <div class="col-md-8" style="padding-right: 30px">
                 <div class="post-details pt-4">
                   <div class="post-title h4">
-                    <a href="{{ route('post') }}" class="text-decoration-none text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?</a>
+                    <a href="{{ route('post') }}" class="text-decoration-none text-dark">{{ Str::limit($post->title, 60) }}</a>
                   </div>
                   <div class="post-body pt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
+                    {!! html_entity_decode(Str::limit($post->details, 230)) !!}
                   </div>
                   <div class="post-author pt-4">
-                    Post by: <strong>Angel Monalisa</strong> <br>
-                    Post Date: 10 Oct 2022
+                    Post by: <strong>{{ $post->user->name }}</strong> <br>
+                    Post Date: {{ $post->created_at->toFormattedDateString() }}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="post-image">
-                  <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
-                </div>
-              </div>
-              <div class="col-md-8" style="padding-right: 30px">
-                <div class="post-details pt-4">
-                  <div class="post-title h4">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
-                  </div>
-                  <div class="post-body pt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
-                  </div>
-                  <div class="post-author pt-4">
-                    Post by: <strong>Angel Monalisa</strong> <br>
-                    Post Date: 10 Oct 2022
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="post-image">
-                  <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
-                </div>
-              </div>
-              <div class="col-md-8" style="padding-right: 30px">
-                <div class="post-details pt-4">
-                  <div class="post-title h4">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
-                  </div>
-                  <div class="post-body pt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
-                  </div>
-                  <div class="post-author pt-4">
-                    Post by: <strong>Angel Monalisa</strong> <br>
-                    Post Date: 10 Oct 2022
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="post-image">
-                  <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
-                </div>
-              </div>
-              <div class="col-md-8" style="padding-right: 30px">
-                <div class="post-details pt-4">
-                  <div class="post-title h4">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
-                  </div>
-                  <div class="post-body pt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
-                  </div>
-                  <div class="post-author pt-4">
-                    Post by: <strong>Angel Monalisa</strong> <br>
-                    Post Date: 10 Oct 2022
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="posts bg-light shadow mb-4" style="min-height: 250px;">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="post-image">
-                  <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
-                </div>
-              </div>
-              <div class="col-md-8" style="padding-right: 30px">
-                <div class="post-details pt-4">
-                  <div class="post-title h4">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, fugit?
-                  </div>
-                  <div class="post-body pt-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam adipisci, accusantium quis ipsa ab perspiciatis.
-                  </div>
-                  <div class="post-author pt-4">
-                    Post by: <strong>Angel Monalisa</strong> <br>
-                    Post Date: 10 Oct 2022
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          @endforeach
+          {{ $posts->links('pagination::bootstrap-4') }}
 
         </div>
       </div>
