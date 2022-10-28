@@ -13,7 +13,11 @@
             </div>
             <div class="card-body" style="min-height: 400px;">
                 <div class="post-image mb-3">
-                    <img src="{{ asset('images/slider-1.jpg') }}" alt="" height="400px" width="auto" class="d-block mx-auto">
+                    @if($post->image)
+                    <img src="{{ asset('image/'.$post->image) }}" alt="" height="400px" width="auto" class="d-block mx-auto">
+                    @else
+                    <img src="{{ asset('images/post-image.jpg') }}" alt="" height="400px" width="auto" class="d-block mx-auto">
+                    @endif
                     <div class="image-caption text-center"><strong>Caption:</strong> Lorem ipsum dolor sit amet.</div>
                 </div>
                 <div class="post-body px-4" style="text-align: justify;">

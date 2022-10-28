@@ -16,7 +16,11 @@
             <div class="row">
               <div class="col-md-4">
                 <div class="post-image">
+                  @if($post->image)
+                  <img src="{{ asset('image/'.$post->image) }}" alt="" height="250px" width="250px">
+                  @else
                   <img src="{{ asset('images/post-image.jpg') }}" alt="" height="250px" width="250px">
+                  @endif
                 </div>
               </div>
               <div class="col-md-8" style="padding-right: 30px">
