@@ -7,6 +7,30 @@
   <div class="main-body-section px-5">
     <div class="row">
       <div class="single-post-section py-3">
+        <div class="alert-section">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ $error }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endforeach
+            @endif
+            
+            @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session()->get('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
+            @if(session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session()->get('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif 
+        </div>
         <div class="card shadow">
             <div class="card-header text-center h4">
                 Lorem ipsum dolor sit amet.
@@ -53,52 +77,48 @@
                             Comments
                         </div>
                         
-                        <div class="comments mb-4">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <img src="{{ asset('images/user.jpg') }}" alt="user" class="border rounded-circle" height="50px" width="50px">
-                                </div>
-                                <div class="col-md-4" style="margin-left: -35px;">
-                                    <div class="message rounded p-1 border">
-                                        <strong>Sadia Jahan Prova</strong>
-                                        <div class="mt-1">Lorem ipsum dolor sit amet.</div>
-                                        <small>Date: 10 Oct 2022</small>
+                        @if(!empty($comments) && $comments->count())
+                            @foreach ($comments as $comment)                        
+                            <div class="comments mb-4">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <img src="{{ asset('images/user.jpg') }}" alt="user" class="border rounded-circle" height="50px" width="50px">
+                                    </div>
+                                    <div class="col-md-4" style="margin-left: -35px;">
+                                        <div class="message rounded p-1 border">
+                                            <strong>{{ $comment->name }}</strong>
+                                            <div class="mt-1">{{ $comment->comment }}</div>
+                                            <small>Date: {{ $comment->created_at->toFormattedDateString() }}</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
+                            @endforeach
+                        @else
                         <div class="comments mb-4">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <img src="{{ asset('images/user.jpg') }}" alt="user" class="border rounded-circle" height="50px" width="50px">
-                                </div>
-                                <div class="col-md-4" style="margin-left: -35px;">
-                                    <div class="message rounded p-1 border">
-                                        <strong>Sadia Jahan Prova</strong>
-                                        <div class="mt-1">Lorem ipsum dolor sit amet.</div>
-                                        <small>Date: 10 Oct 2022</small>
-                                    </div>
-                                </div>
-                            </div>
+                            <p>*No comments in this post...</p>
                         </div>
+                        @endif  
 
                         <div class="user-comments border rounded mb-2 p-4" style="height: 200px; margin-right: 400px;">
-                            <form action="">                                  
-                                  <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                            <form action="{{ route('store.comment') }}" method="POST">
+                                @csrf                                  
+                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name" required>
                                     <span class="input-group-text">@</span>
-                                    <input type="text" class="form-control" placeholder="Email" aria-label="Email">
-                                  </div>
-                                  
-                                  <div class="input-group mb-3">
-                                    <span class="input-group-text">Comment</span>
-                                    <textarea class="form-control" aria-label="With textarea"></textarea>
-                                  </div>
+                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" name="email" required>
+                                </div>
+                                
+                                <div class="input-group mb-3">
+                                <span class="input-group-text">Comment</span>
+                                <textarea class="form-control" aria-label="With textarea" name="comment" required></textarea>
+                                </div>
 
-                                  <div class="input-group mb-3">
-                                    <button class="btn btn-sm btn-primary">Submit</button>
-                                  </div>
+                                <div class="input-group mb-3">
+                                <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                                </div>
                             </form>
                         </div>
                     </div>

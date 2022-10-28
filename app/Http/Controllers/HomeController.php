@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -20,8 +21,36 @@ class HomeController extends Controller
     {
         $title = 'Post';
         $post = Post::with('user')->where('id', $id)->first();
-        // dd($post);
-        return view('single-post', compact('title','post'));
+        $comments = Comment::where('post_id', $id)->get();
+        return view('single-post', compact('title','post','comments'));
+    }
+
+    public function storeComment(Request $request)
+    {
+        $request->validate([
+            'name'        => 'required',
+            'email'       => 'required',
+            'comment'     => 'required',
+            'post_id'     => 'required',
+        ]);
+
+        try{
+            
+            $comment = new Comment;
+            $comment->name    = $request->name;
+            $comment->email   = $request->email;
+            $comment->comment = $request->comment;
+            $comment->post_id = $request->post_id;
+            $comment->save();
+
+            return redirect()->back()->with('success', 'Comment submitted !!');
+        }
+        catch(\Exception $e){
+            Log::error($e->getMessage());
+            return redirect()->back()->with('error', 'Comment not submitted !!');
+        }
+
+
     }
 
     public function hisPlace()

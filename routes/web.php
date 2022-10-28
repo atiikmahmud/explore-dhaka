@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',                 [HomeController::class, 'index'])->name('home');
 Route::get('/single-post/{id}', [HomeController::class, 'singlePost'])->name('post');
+Route::post('/commnet',         [HomeController::class, 'storeComment'])->name('store.comment');
 Route::get('/historical-place', [HomeController::class, 'hisPlace'])->name('his.place');
 Route::get('/hotel',            [HomeController::class, 'hotel'])->name('hotel');
 Route::get('/restaurent',       [HomeController::class, 'restaurent'])->name('restaurent');
