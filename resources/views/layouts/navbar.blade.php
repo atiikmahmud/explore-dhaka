@@ -29,7 +29,7 @@
               <a class="nav-link @if($title == 'Hotel') active @endif" href="{{ route('hotel') }}">Hotel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link @if($title == 'Restaurent') active @endif" href="{{ route('restaurent') }}">Restaurent</a>
+              <a class="nav-link @if($title == 'Restaurant') active @endif" href="{{ route('restaurant') }}">Restaurant</a>
             </li>
             <li class="nav-item">
               <a class="nav-link @if($title == 'Hospital') active @endif" href="{{ route('hospital') }}">Hospital</a>

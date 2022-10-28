@@ -14,7 +14,9 @@ class HomeController extends Controller
     {
         $title = 'Home';
         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
-        return view('index', compact('title','posts'));
+        $popularPost = Post::where('category', 'Historical Place')->orderBy('created_at', 'desc')->take(7)->get();
+        // dd($popularPost->toArray());
+        return view('index', compact('title','posts','popularPost'));
     }
 
     public function singlePost($id)
@@ -56,25 +58,29 @@ class HomeController extends Controller
     public function hisPlace()
     {
         $title = 'Historical Place';
-        return view('historical-place', compact('title'));
+        $posts = Post::with('user')->where('category', $title)->orderBy('created_at', 'desc')->paginate(5);
+        return view('historical-place', compact('title','posts'));
     }
 
     public function hotel()
     {
         $title = 'Hotel';
-        return view('hotel', compact('title'));
+        $posts = Post::with('user')->where('category', $title)->orderBy('created_at', 'desc')->paginate(5);
+        return view('hotel', compact('title','posts'));
     }
 
-    public function restaurent()
+    public function restaurant()
     {
-        $title = 'Restaurent';
-        return view('restaurent', compact('title'));
+        $title = 'Restaurant';
+        $posts = Post::with('user')->where('category', $title)->orderBy('created_at', 'desc')->paginate(5);
+        return view('restaurant', compact('title','posts'));
     }
 
     public function hospital()
     {
         $title = 'Hospital';
-        return view('hospital', compact('title'));
+        $posts = Post::with('user')->where('category', $title)->orderBy('created_at', 'desc')->paginate(5);
+        return view('hospital', compact('title','posts'));
     }
 
     public function aboutUs()

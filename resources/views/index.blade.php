@@ -32,7 +32,8 @@
                     {!! html_entity_decode(Str::limit($post->details, 150)) !!}
                   </div>
                   <div class="post-author pt-4">
-                    Post by: <strong>{{ $post->user->name }}</strong> <br>
+                    Post by: {{ $post->user->name }} <br>
+                    Category: {{ $post->category }} <br>
                     Post Date: {{ $post->created_at->toFormattedDateString() }}
                   </div>
                 </div>
@@ -53,20 +54,16 @@
             </div>
             <div class="list px-3">
               <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                @foreach($popularPost as $post)
+                <li class="list-group-item"><a href="{{ route('post', $post->id) }}" class="text-decoration-none text-dark">{{ Str::limit($post->title, 25) }}</a></li>
+                @endforeach
               </ul>
             </div>
           </div>
 
-          <div class="popular-restaurent bg-light shadow mb-4" style="min-height: 360px;">
+          <div class="popular-restaurant bg-light shadow mb-4" style="min-height: 360px;">
             <div class="title h5 text-center pt-3 pb-1">
-              Popular Restaurent
+              Popular Restaurant
             </div>
             <div class="list px-3">
               <ul class="list-group">
@@ -81,7 +78,7 @@
             </div>
           </div>
 
-          <div class="popular-restaurent bg-light shadow mb-4" style="min-height: 360px;">
+          <div class="popular-restaurant bg-light shadow mb-4" style="min-height: 360px;">
             <div class="title h5 text-center pt-3 pb-1">
               Hospital
             </div>
@@ -98,7 +95,7 @@
             </div>
           </div>
 
-          <div class="popular-restaurent bg-light shadow mb-4" style="min-height: 193px;">
+          <div class="popular-restaurant bg-light shadow mb-4" style="min-height: 193px;">
             <div class="title h5 text-center pt-3 pb-1">
               Emergency
             </div>

@@ -33,7 +33,7 @@
         </div>
         <div class="card shadow">
             <div class="card-header text-center h4">
-                Lorem ipsum dolor sit amet.
+                {{ Str::limit($post->title, 60) }}
             </div>
             <div class="card-body" style="min-height: 400px;">
                 <div class="post-image mb-3">
@@ -42,7 +42,7 @@
                     @else
                     <img src="{{ asset('images/post-image.jpg') }}" alt="" height="400px" width="auto" class="d-block mx-auto">
                     @endif
-                    <div class="image-caption text-center"><strong>Caption:</strong> Lorem ipsum dolor sit amet.</div>
+                    <div class="image-caption text-center"><i><strong>Caption:</strong> {{ $post->caption }}</i></div>
                 </div>
                 <div class="post-body px-4" style="text-align: justify;">
                     <div class="post-title h4 mb-2">

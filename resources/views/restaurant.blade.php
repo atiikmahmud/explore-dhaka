@@ -8,7 +8,7 @@
         <div class="historical-place px-5 pt-4">
            <div class="card">
                 <div class="card-header h3 text-center">
-                    Historical Place
+                    Restaurant
                 </div>                
                 <div class="card-body" style="min-height: 420px;">
                     @if(!empty($posts) && $posts->count())

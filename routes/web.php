@@ -9,7 +9,7 @@ Route::get('/single-post/{id}', [HomeController::class, 'singlePost'])->name('po
 Route::post('/commnet',         [HomeController::class, 'storeComment'])->name('store.comment');
 Route::get('/historical-place', [HomeController::class, 'hisPlace'])->name('his.place');
 Route::get('/hotel',            [HomeController::class, 'hotel'])->name('hotel');
-Route::get('/restaurent',       [HomeController::class, 'restaurent'])->name('restaurent');
+Route::get('/restaurant',       [HomeController::class, 'restaurant'])->name('restaurant');
 Route::get('/hospital',         [HomeController::class, 'hospital'])->name('hospital');
 Route::get('/about-us',         [HomeController::class, 'aboutUs'])->name('about');
 

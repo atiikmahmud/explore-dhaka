@@ -47,7 +47,7 @@
                                                 <option selected>Select category</option>
                                                 <option value="Historical Place">Historical Place</option>
                                                 <option value="Hotel">Hotel</option>
-                                                <option value="Restaurent">Restaurent</option>
+                                                <option value="Restaurant">Restaurant</option>
                                                 <option value="Hospital">Hospital</option>
                                                 <option value="Emergency">Emergency</option>
                                               </select>
