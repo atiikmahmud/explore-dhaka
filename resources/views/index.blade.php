@@ -67,13 +67,9 @@
             </div>
             <div class="list px-3">
               <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                @foreach($popularRestaurant as $post)
+                <li class="list-group-item"><a href="{{ route('post', $post->id) }}" class="text-decoration-none text-dark">{{ Str::limit($post->title, 25) }}</a></li>
+                @endforeach
               </ul>
             </div>
           </div>
@@ -84,13 +80,9 @@
             </div>
             <div class="list px-3">
               <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                @foreach($hospital as $post)
+                <li class="list-group-item"><a href="{{ route('post', $post->id) }}" class="text-decoration-none text-dark">{{ Str::limit($post->title, 25) }}</a></li>
+                @endforeach
               </ul>
             </div>
           </div>
@@ -101,9 +93,9 @@
             </div>
             <div class="list px-3">
               <ul class="list-group">
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
-                <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">An item</a></li>
+                @foreach($emergency as $post)
+                <li class="list-group-item"><a href="{{ route('post', $post->id) }}" class="text-decoration-none text-dark">{{ Str::limit($post->title, 25) }}</a></li>
+                @endforeach
               </ul>
             </div>
           </div>

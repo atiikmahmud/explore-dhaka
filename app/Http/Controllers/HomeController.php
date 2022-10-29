@@ -15,8 +15,11 @@ class HomeController extends Controller
         $title = 'Home';
         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
         $popularPost = Post::where('category', 'Historical Place')->orderBy('created_at', 'desc')->take(7)->get();
-        // dd($popularPost->toArray());
-        return view('index', compact('title','posts','popularPost'));
+        $popularRestaurant = Post::where('category', 'Restaurant')->orderBy('created_at', 'desc')->take(7)->get();
+        $hospital = Post::where('category', 'Hospital')->orderBy('created_at', 'desc')->take(7)->get();
+        $emergency = Post::where('category', 'Emergency')->orderBy('created_at', 'desc')->take(3)->get();
+
+        return view('index', compact('title','posts','popularPost','popularRestaurant','hospital','emergency'));
     }
 
     public function singlePost($id)
