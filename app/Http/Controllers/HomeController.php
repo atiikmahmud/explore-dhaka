@@ -10,16 +10,25 @@ use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $title = 'Home';
-        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
+        $query = Post::query();
+        if(count($request->all()) > 0)
+        {
+            if(!empty($request->search))
+            {
+                $query->where('title','like','%'.$request->search.'%')->orWhere('category','like','%'.$request->search.'%');
+            }
+        }
+        $posts = $query->with('user')->orderBy('created_at', 'desc')->paginate(5);
+        $queryData = $request->query();
         $popularPost = Post::where('category', 'Historical Place')->orderBy('created_at', 'desc')->take(7)->get();
         $popularRestaurant = Post::where('category', 'Restaurant')->orderBy('created_at', 'desc')->take(7)->get();
         $hospital = Post::where('category', 'Hospital')->orderBy('created_at', 'desc')->take(7)->get();
         $emergency = Post::where('category', 'Emergency')->orderBy('created_at', 'desc')->take(3)->get();
 
-        return view('index', compact('title','posts','popularPost','popularRestaurant','hospital','emergency'));
+        return view('index', compact('title','posts','popularPost','popularRestaurant','hospital','emergency','queryData'));
     }
 
     public function singlePost($id)
