@@ -18,9 +18,9 @@
                                 <div class="col-md-3">
                                     <div class="post-image">
                                         @if($post->image)
-                                        <img src="{{ asset('image/'.$post->image) }}" alt="" height="220px" width="220px">
+                                        <a href="{{ route('post', $post->id) }}"><img src="{{ asset('image/'.$post->image) }}" alt="" height="220px" width="220px"></a>
                                         @else
-                                        <img src="{{ asset('images/post-image.jpg') }}" alt="" height="220px" width="220px">
+                                        <a href="{{ route('post', $post->id) }}"><img src="{{ asset('images/post-image.jpg') }}" alt="" height="220px" width="220px"></a>
                                         @endif
                                     </div>
                                 </div>
