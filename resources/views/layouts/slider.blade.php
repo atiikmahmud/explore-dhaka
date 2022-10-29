@@ -12,23 +12,24 @@
             <div class="carousel-item active" data-bs-interval="10000">
               <img src="{{ asset('images/slider-1.jpg') }}" class="d-block w-100" alt="..." height="500px" width="100%">
               <div class="carousel-caption d-none d-md-block text-light">
-                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">First slide label</h5>
+                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">
+                  Ahsan Manzil</h5>
                 <br>
-                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Some representative placeholder content for the first slide.</p>
+                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">The Nawab of Dhaka, originally spelt in English Nawab of Dacca.</p>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
               <img src="{{ asset('images/slider-2.jpg') }}" class="d-block w-100" alt="..." height="500px" width="100%">
               <div class="carousel-caption d-none d-md-block text-light">
-                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Second slide label</h5> <br>
-                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Some representative placeholder content for the second slide.</p>
+                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Shapla Square</h5> <br>
+                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Dhaka is the capital and largest city of Bangladesh.</p>
               </div>
             </div>
             <div class="carousel-item">
               <img src="{{ asset('images/slider-3.webp') }}" class="d-block w-100" alt="..." height="500px" width="100%">
               <div class="carousel-caption d-none d-md-block text-light">
-                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Third slide label</h5> <br>
-                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Some representative placeholder content for the third slide.</p>
+                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Sadarghat</h5> <br>
+                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Dhaka Sadarghat, also called Sadarghat Port, the Dhaka City River Front.</p>
               </div>
             </div>
           </div>
