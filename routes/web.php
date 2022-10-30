@@ -19,6 +19,9 @@ Route::post('/contacts',        [HomeController::class, 'storeContacts'])->name(
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
     Route::get('/dashboard',    [AdminController::class, 'index'])->name('dashboard');
     Route::get('/posts',        [AdminController::class, 'posts'])->name('posts');
+    Route::get('/edit-post/{id}', [AdminController::class, 'editPost'])->name('edit.post');
+    Route::post('/update-post', [AdminController::class, 'updatePost'])->name('update.post');
+    Route::get('/delete-post/{id}', [AdminController::class, 'deletePost'])->name('delete.post');
     Route::get('/admin-single-post/{id}', [AdminController::class, 'singlePost'])->name('single.post');
     Route::get('/add-post',     [AdminController::class, 'addPost'])->name('add.post');
     Route::post('/add-post',    [AdminController::class, 'storePost'])->name('store.post');

@@ -73,6 +73,60 @@ class AdminController extends Controller
         return view('admin.single-post', compact('title','post','comments'));
     }
 
+    public function editPost($id)
+    {
+        $title = 'Edit Post';
+        $post = Post::where('id', $id)->first();
+        
+        return view('admin.edit-post', compact('title','post'));
+    }
+
+    public function updatePost(Request $request)
+    {
+        $request->validate([
+            'title'         => 'required',
+            'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'caption'       => 'required',
+            'details'       => 'required',
+            'category'      => 'required',
+            'map'           => 'required',
+        ]);
+
+        try{
+            $post = Post::find($request->id);
+            if($request->has('image') && !empty($request->image))
+            {
+
+                $image = $request->file('image');
+                $destinationPath = 'image/';
+                $postImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $postImage);
+                $input['image'] = "$postImage";
+                $post->image   = $postImage;
+            }
+            $post->caption = $request->caption;
+            $post->title   = $request->title;
+            $post->details = $request->details;
+            $post->category= $request->category;
+            $post->map     = $request->map;
+            $post->user_id = Auth()->user()->id;
+            $post->save();
+
+            return redirect()->back()->with('success', 'Post updated successfully !!');
+        }
+        catch(\Exception $e){
+            Log::error($e->getMessage());
+            return redirect()->back()->with('error', 'Post not update !!');
+        }
+    }
+
+    public function deletePost($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->back()->with('success', 'Post deleted successfully!');
+    }
+
     public function comments()
     {
         $comments = Comment::all();

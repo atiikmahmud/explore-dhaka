@@ -39,7 +39,7 @@
                                     <th scope="col">Title</th>
                                     <th scope="col">Category</th>
                                     <th scope="col">Post by</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col" width="15%">Action</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -51,9 +51,9 @@
                                         <td>{{ $post->category }}</td>
                                         <td>{{ $post->user->name }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary">View</a>
-                                            <a href="#" class="btn btn-sm btn-info">Edit</a>
-                                            <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="{{ route('single.post', $post->id) }}" class="btn btn-sm btn-primary">View</a>
+                                            <a href="{{ route('edit.post', $post->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                            <a href="{{ route('delete.post', $post->id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure, delete this post?')">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach                                    
