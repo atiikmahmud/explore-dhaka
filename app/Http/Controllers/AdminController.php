@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -64,9 +65,25 @@ class AdminController extends Controller
         }
     }
 
+    public function singlePost($id)
+    {
+        $title = 'Post';
+        $post = Post::with('user')->where('id', $id)->first();
+        $comments = Comment::where('post_id', $id)->get();
+        return view('admin.single-post', compact('title','post','comments'));
+    }
+
     public function comments()
     {
-        return view('admin.comments');
+        $comments = Comment::all();
+        return view('admin.comments', compact('comments'));
+    }
+
+    public function deleteComment($id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
+        return redirect()->back()->with('success', 'Comment deleted successfully!');
     }
 
     /* Contact Messages Function Start */

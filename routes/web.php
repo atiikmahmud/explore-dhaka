@@ -19,9 +19,11 @@ Route::post('/contacts',        [HomeController::class, 'storeContacts'])->name(
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
     Route::get('/dashboard',    [AdminController::class, 'index'])->name('dashboard');
     Route::get('/posts',        [AdminController::class, 'posts'])->name('posts');
+    Route::get('/admin-single-post/{id}', [AdminController::class, 'singlePost'])->name('single.post');
     Route::get('/add-post',     [AdminController::class, 'addPost'])->name('add.post');
     Route::post('/add-post',    [AdminController::class, 'storePost'])->name('store.post');
     Route::get('/comments',     [AdminController::class, 'comments'])->name('comments');
+    Route::get('/delete-comment/{id}', [AdminController::class, 'deleteComment'])->name('delete.comment');
     Route::get('/messages',     [AdminController::class, 'messages'])->name('messages');
     Route::get('/read-message/{id}',   [AdminController::class, 'readMessage'])->name('read.message');
     Route::get('/delete-message/{id}', [AdminController::class, 'deleteMessage'])->name('delete.message');
