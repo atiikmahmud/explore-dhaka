@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Post;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -28,7 +29,11 @@ class HomeController extends Controller
         $hospital = Post::where('category', 'Hospital')->orderBy('created_at', 'desc')->take(7)->get();
         $emergency = Post::where('category', 'Emergency')->orderBy('created_at', 'desc')->take(3)->get();
 
-        return view('index', compact('title','posts','popularPost','popularRestaurant','hospital','emergency','queryData'));
+        $slider1 = Slider::where('id', 1)->first();
+        $slider2 = Slider::where('id', 2)->first();
+        $slider3 = Slider::where('id', 3)->first();
+
+        return view('index', compact('title','posts','popularPost','popularRestaurant','hospital','emergency','queryData','slider1','slider2','slider3'));
     }
 
     public function singlePost($id)

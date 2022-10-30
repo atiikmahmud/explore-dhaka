@@ -10,26 +10,38 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-              <img src="{{ asset('images/slider-1.jpg') }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @if($slider1->image)
+              <img src="{{ asset('slider/'.$slider1->image) }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @else
+              <img src="{{ asset('images/post-image.jpg') }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @endif
               <div class="carousel-caption d-none d-md-block text-light">
                 <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">
-                  Ahsan Manzil</h5>
+                  {{ $slider1->title }}</h5>
                 <br>
-                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">The Nawab of Dhaka, originally spelt in English Nawab of Dacca.</p>
+                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">{{ $slider1->caption }}</p>
               </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-              <img src="{{ asset('images/slider-2.jpg') }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @if($slider2->image)
+              <img src="{{ asset('slider/'.$slider2->image) }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @else
+              <img src="{{ asset('images/post-image.jpg') }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @endif
               <div class="carousel-caption d-none d-md-block text-light">
-                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Shapla Square</h5> <br>
-                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Dhaka is the capital and largest city of Bangladesh.</p>
+                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">{{ $slider2->title }}</h5> <br>
+                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">{{ $slider2->caption }}</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="{{ asset('images/slider-3.webp') }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @if($slider3->image)
+              <img src="{{ asset('slider/'.$slider3->image) }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @else
+              <img src="{{ asset('images/post-image.jpg') }}" class="d-block w-100" alt="..." height="500px" width="100%">
+              @endif
               <div class="carousel-caption d-none d-md-block text-light">
-                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Sadarghat</h5> <br>
-                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">Dhaka Sadarghat, also called Sadarghat Port, the Dhaka City River Front.</p>
+                <h5 class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">{{ $slider3->title }}</h5> <br>
+                <p class="d-inline p-1" style="background-color: rgba(0, 0, 0, 0.377)">{{ $slider3->caption }}</p>
               </div>
             </div>
           </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Post;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -174,8 +175,47 @@ class AdminController extends Controller
 
     /* Contact Messages Function End */
 
+    /* Slider Function Start */
+
     public function sliders()
     {
-        return view('admin.sliders');
+        $slider1 = Slider::where('id', 1)->first();
+        $slider2 = Slider::where('id', 2)->first();
+        $slider3 = Slider::where('id', 3)->first();
+        return view('admin.sliders', compact('slider1','slider2','slider3'));
     }
+
+    public function sliderUpadte(Request $request)
+    {
+        $request->validate([
+            'title'         => 'required',
+            'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'caption'       => 'required',
+        ]);
+
+        try{
+            $slider = Slider::find($request->id);
+            if($request->has('image') && !empty($request->image))
+            {
+
+                $image = $request->file('image');
+                $destinationPath = 'slider/';
+                $slideImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $slideImage);
+                $input['image'] = "$slideImage";
+                $slider->image   = $slideImage;
+            }
+            $slider->caption = $request->caption;
+            $slider->title   = $request->title;
+            $slider->save();
+
+            return redirect()->back()->with('success', 'Slide updated successfully !!');
+        }
+        catch(\Exception $e){
+            Log::error($e->getMessage());
+            return redirect()->back()->with('error', 'Slide not update !!');
+        }
+    }
+
+    /* Slider Function End */
 }

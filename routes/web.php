@@ -31,4 +31,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified' 
     Route::get('/read-message/{id}',   [AdminController::class, 'readMessage'])->name('read.message');
     Route::get('/delete-message/{id}', [AdminController::class, 'deleteMessage'])->name('delete.message');
     Route::get('/sliders',      [AdminController::class, 'sliders'])->name('sliders');
+    Route::post('/update-slider',[AdminController::class, 'sliderUpadte'])->name('update.slide');
 });
