@@ -41,7 +41,7 @@
               <a class="nav-link @if($title == 'Contacts') active @endif" href="{{ route('contacts') }}">Contacts</a>
             </li>
           </ul>
-          <form class="d-flex" role="search" action="{{ route('home') }}" method="GET">
+          <form class="d-flex" role="search" action="{{ route('search') }}" method="GET">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="{{ !empty($queryData['search']) ? $queryData['search'] : '' }}"
             placeholder="Post title or category..." aria-label="Post title or category...">
             <button class="btn btn-outline-success" type="submit">Search</button>
