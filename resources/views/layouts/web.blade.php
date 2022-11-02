@@ -1,7 +1,9 @@
 <!-- Header Section -->
 @include('layouts.header')
 
-<!-- Navbar Section -->
+<body>
+<div style="display: flex; flex-direction: column; min-height: 100vh;">
+    <!-- Navbar Section -->
 @include('layouts.navbar')
 
 <!-- Main Body section -->
@@ -10,3 +12,6 @@
 
 <!-- Footer Section -->
 @include('layouts.footer')
+</div>
+</body>
+</html>

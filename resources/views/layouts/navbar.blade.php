@@ -1,5 +1,3 @@
-<body>
-
 <!-- Header Section Start -->
 <div class="header-section">
     <div class="container">

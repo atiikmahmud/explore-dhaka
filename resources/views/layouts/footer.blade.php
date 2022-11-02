@@ -1,4 +1,4 @@
-<footer class="bg-dark mt-4" style="min-height: 50px">
+<footer class="bg-dark" style="min-height: 50px; margin-top: auto;">
     <div class="container">
       <div class="footer-section text-light px-5">
         <div class="copy-right-section text-center py-3">
@@ -24,5 +24,3 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</body>
-</html>

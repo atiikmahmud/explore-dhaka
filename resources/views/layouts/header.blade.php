@@ -20,6 +20,10 @@
         top: 0;
         width: 100%;
       }
+
+      .main-body-section{
+        margin-bottom: 1.5rem;
+      }
     </style>
 
   </head>
