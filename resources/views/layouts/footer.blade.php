@@ -2,7 +2,7 @@
     <div class="container">
       <div class="footer-section text-light px-5">
         <div class="copy-right-section text-center py-3">
-          Copyright &copy; 2022 <a href="{{ route('home') }}" class="text-decoration-none text-light">Explore Dhaka</a>
+          Copyright &copy; 2022 <a href="{{ route('home') }}" class="text-decoration-none text-light">Explore Dhaka. All rights reserved.</a>
         </div>
       </div>
     </div>
